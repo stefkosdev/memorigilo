@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/left"
+        android:icon="@mipmap/left_arrow"
+        android:title="@string/left" />
+    <item
+        android:id="@+id/top"
+        android:icon="@mipmap/top_arrow"
+        android:title="@string/top" />
+    <item
+        android:id="@+id/ok"
+        android:icon="@mipmap/ok"
+        android:title="@string/ok" />
+    <item
+        android:id="@+id/right"
+        android:icon="@mipmap/right_arrow"
+        android:title="@string/right" />
+
+</menu>
