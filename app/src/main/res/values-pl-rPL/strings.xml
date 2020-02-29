@@ -1,4 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Memorigilo</string>
+    <string name="left">Lewo</string>
+    <string name="right">Prawo</string>
+    <string name="top">Góra</string>
+    <string name="ok">OK</string>
+
+    <string name="title_activity_settings">Ustawienia</string>
+    <string name="remind">Przypomnienie</string>
+
+    <string name="medicine">Leki</string>
+    <string name="others">Inne</string>
+
+    <string name="set_time">Set Time</string>
+    <string name="set_meals">Set meals</string>
+
+
+    <string name="breakfast">Breakfast</string>
+    <string name="second_breakfast">Second breakfast</string>
+    <string name="dinner">Dinner</string>
+    <string name="pre_supper">Pre supper</string>
+    <string name="supper">Supper</string>
+    <string name="returnset">Return</string>
+
+    <!-- List of meals  -->
+    <string-array name="meals">
+        <item>@string/breakfast</item>
+        <item>@string/second_breakfast</item>
+        <item>@string/dinner</item>
+        <item>@string/pre_supper</item>
+        <item>@string/supper</item>
+    </string-array>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <string name="alarmVolume">Alarm volume</string>
+    <string name="alarmSignal">Alarm signal</string>
+    <string name="alarmTime">Time alarm</string>
+    <string name="manual">Manual</string>
+
+    <string name="alarmTime15">15 seconds</string>
+    <string name="alarmTime30">30 seconds</string>
+    <string name="alarmTime60">minute</string>
+    <string name="alarmTimeOff">Turned off</string>
+
+    <string name="select">Select</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>
