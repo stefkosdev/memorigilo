@@ -12,16 +12,16 @@
     <string name="medicine">Leki</string>
     <string name="others">Inne</string>
 
-    <string name="set_time">Set Time</string>
-    <string name="set_meals">Set meals</string>
+    <string name="set_time">Ustaw czas</string>
+    <string name="set_meals">Ustaw do posiłku</string>
 
 
-    <string name="breakfast">Breakfast</string>
-    <string name="second_breakfast">Second breakfast</string>
-    <string name="dinner">Dinner</string>
-    <string name="pre_supper">Pre supper</string>
-    <string name="supper">Supper</string>
-    <string name="returnset">Return</string>
+    <string name="breakfast">Śniadanie</string>
+    <string name="second_breakfast">Drugie śniadanie</string>
+    <string name="dinner">Obiad</string>
+    <string name="pre_supper">Podwieczorek</string>
+    <string name="supper">Kolacja</string>
+    <string name="returnset">Powrót</string>
 
     <!-- List of meals  -->
     <string-array name="meals">
@@ -40,17 +40,17 @@
     <string name="signature_title">Your signature</string>
     <string name="reply_title">Default reply action</string>
 
-    <string name="alarmVolume">Alarm volume</string>
-    <string name="alarmSignal">Alarm signal</string>
-    <string name="alarmTime">Time alarm</string>
-    <string name="manual">Manual</string>
+    <string name="alarmVolume">Głosnośc dzwonka/string>
+    <string name="alarmSignal">Wybierz dzwonek/string>
+    <string name="alarmTime">Czas alarmu</string>
+    <string name="manual">Ustawienie ręczne</string>
 
     <string name="alarmTime15">15 seconds</string>
     <string name="alarmTime30">30 seconds</string>
     <string name="alarmTime60">minute</string>
-    <string name="alarmTimeOff">Turned off</string>
+    <string name="alarmTimeOff">Wyłącz</string>
 
-    <string name="select">Select</string>
+    <string name="select">Wybierz</string>
 
     <!-- Sync Preferences -->
     <string name="sync_title">Sync email periodically</string>
