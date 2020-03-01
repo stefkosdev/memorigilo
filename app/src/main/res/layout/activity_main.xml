@@ -12,7 +12,8 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="1dp">
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
 
         <Button
             android:id="@+id/settingsB"
@@ -27,7 +28,7 @@
             android:layout_height="161dp"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="52dp"
-            android:layout_marginTop="88dp"
+            android:layout_marginTop="70dp"
             android:text="DigitalClock"
             android:textSize="106sp" />
 
@@ -36,13 +37,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/remind"
-            android:textSize="48sp" />
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/remindListB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/eventList"
+            android:textSize="40sp" />
 
         <Button
             android:id="@+id/mainManualB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="100dp"
             android:text="@string/manual" />
 
     </LinearLayout>

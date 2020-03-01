@@ -1,5 +1,6 @@
 package com.stefkos.memorigilo.timechoose;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import com.stefkos.memorigilo.MainActivity;
 import com.stefkos.memorigilo.R;
+import com.stefkos.memorigilo.SettingsActivity;
 
 public class ChooseFragment4_2 extends Fragment {
 
@@ -112,7 +114,10 @@ public class ChooseFragment4_2 extends Fragment {
                 long ret = MainActivity.calendarManager.createEvent( title, "WEZ!", fromHour, fromMins, toHour, toMins );
                 MainActivity.foodTimes[position].setEventID( ret );
                 MainActivity.saveSettings(v.getContext() );
-            }});
+
+                Intent intent = new Intent(view.getContext(), MainActivity.class);
+                view.getContext().startActivity(intent);}
+        });
 
         return v;
     }

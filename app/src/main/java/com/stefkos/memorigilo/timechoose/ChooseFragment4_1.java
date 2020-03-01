@@ -1,5 +1,6 @@
 package com.stefkos.memorigilo.timechoose;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -106,7 +107,10 @@ public class ChooseFragment4_1 extends Fragment {
                 }
 
                 MainActivity.calendarManager.createEvent( title, "WEZ!", hour, mins, toHour, toMins );
-            }});
+
+                Intent intent = new Intent(view.getContext(), MainActivity.class);
+                view.getContext().startActivity(intent);}
+        });
 
         return v;
     }

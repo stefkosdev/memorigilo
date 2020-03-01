@@ -30,6 +30,7 @@ public class MainActivity extends Activity {
     Button okButton = null;
     Button settings = null;
     Button remind = null;
+    Button eventList = null;
 
     private static final String PREFERENCES = "App_Preferences";
 
@@ -77,6 +78,7 @@ public class MainActivity extends Activity {
         //okButton = findViewById(R.id.okB );
         settings = findViewById(R.id.settingsB);
         remind = findViewById(R.id.remindB);
+        eventList = findViewById(R.id.remindListB);
 
         //
         //
@@ -100,11 +102,18 @@ public class MainActivity extends Activity {
         remind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //StatusApplication sapp = (StatusApplication)getApplication();
-
-                //sapp.show_Notification( "Title", "Going to remind section");
-
                 Intent intent = new Intent(view.getContext(), ChooseActivity.class);
+                view.getContext().startActivity(intent);}
+        });
+
+        //
+        //
+        //
+
+        eventList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), EventListActivity.class);
                 view.getContext().startActivity(intent);}
         });
     }
