@@ -5,15 +5,21 @@
 
     <ImageButton
         android:id="@+id/setByTimeB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:src="@drawable/zegar"
-        android:text="Set By Time" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@null"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"/>
 
     <ImageButton
         android:id="@+id/setByFoodB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:src="@drawable/posilek"
-        android:text="setByFood" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@null"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter" />
 </LinearLayout>
