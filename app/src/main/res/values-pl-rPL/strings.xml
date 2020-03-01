@@ -43,7 +43,7 @@
     <string name="alarmVolume">Głosnośc dzwonka</string>
     <string name="alarmSignal">Wybierz dzwonek</string>
     <string name="alarmTime">Czas alarmu</string>
-    <string name="manual">Ustawienie ręczne</string>
+    <string name="manual">Instrukcja</string>
 
     <string name="alarmTime15">15 seconds</string>
     <string name="alarmTime30">30 seconds</string>
