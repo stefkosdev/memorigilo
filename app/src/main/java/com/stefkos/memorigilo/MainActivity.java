@@ -14,7 +14,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.stefkos.memorigilo.timechoose.ChooseActivity;
-import com.stefkos.memorigilo.util.FootTimeEntry;
+import com.stefkos.memorigilo.util.FoodTimeEntry;
 
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 
     private static final String PREFERENCES = "App_Preferences";
 
-    public static FootTimeEntry foodTimes[];
+    public static FoodTimeEntry foodTimes[];
     // choose meal by ID and then change it
     public static int mealTimeChoose = 0;
 
@@ -44,13 +44,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        MainActivity.foodTimes = new FootTimeEntry[5];
+        MainActivity.foodTimes = new FoodTimeEntry[5];
 
-        MainActivity.foodTimes[0] = new FootTimeEntry();
-        MainActivity.foodTimes[1] = new FootTimeEntry();
-        MainActivity.foodTimes[2] = new FootTimeEntry();
-        MainActivity.foodTimes[3] = new FootTimeEntry();
-        MainActivity.foodTimes[4] = new FootTimeEntry();
+        MainActivity.foodTimes[0] = new FoodTimeEntry();
+        MainActivity.foodTimes[1] = new FoodTimeEntry();
+        MainActivity.foodTimes[2] = new FoodTimeEntry();
+        MainActivity.foodTimes[3] = new FoodTimeEntry();
+        MainActivity.foodTimes[4] = new FoodTimeEntry();
 
         MainActivity.loadSettings( this.getApplication() );
 

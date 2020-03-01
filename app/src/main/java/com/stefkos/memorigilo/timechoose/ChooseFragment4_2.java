@@ -1,6 +1,7 @@
 package com.stefkos.memorigilo.timechoose;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,11 +99,19 @@ public class ChooseFragment4_2 extends Fragment {
                         title = "zegar";
                     }
                 }
-                if( MainActivity.foodTimes[position].getEventID() > 0 )
-                {
 
+                try {
+                    if (MainActivity.foodTimes[position].getEventID() > 0) {
+                        MainActivity.calendarManager.deleteEvent(MainActivity.foodTimes[position].getEventID());
+                    }
+                }
+                catch( SecurityException se )
+                {
+                    Log.e(this.getClass().toString(), "Security Exception: " + se.toString() );
                 }
                 long ret = MainActivity.calendarManager.createEvent( title, "WEZ!", fromHour, fromMins, toHour, toMins );
+                MainActivity.foodTimes[position].setEventID( ret );
+                MainActivity.saveSettings(v.getContext() );
             }});
 
         return v;

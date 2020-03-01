@@ -1,15 +1,11 @@
 package com.stefkos.memorigilo.mealtimechoose;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.stefkos.memorigilo.R;
-import com.stefkos.memorigilo.timechoose.ChooseFragment1;
-import com.stefkos.memorigilo.util.FootTimeEntry;
 
 public class ChooseMealTimeActivity extends FragmentActivity {
 

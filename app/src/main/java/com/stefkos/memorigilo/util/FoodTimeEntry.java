@@ -6,14 +6,14 @@ package com.stefkos.memorigilo.util;
 
 import android.util.Log;
 
-public class FootTimeEntry {
+public class FoodTimeEntry {
     private int fromMin = 0;
     private int fromHour = 0;
     private int toMin = 0;
     private int toHour = 0;
     private long eventID = 0;
 
-    public FootTimeEntry()
+    public FoodTimeEntry()
     {
         fromMin = fromHour = toMin = toHour = 0;
     }

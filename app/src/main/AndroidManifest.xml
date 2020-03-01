@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mealtimechoose.ChooseMealTimeActivity"></activity>
+        <activity android:name=".EventList"></activity>
+        <activity android:name=".mealtimechoose.ChooseMealTimeActivity" />
         <activity android:name=".timechoose.ChooseActivity" />
         <activity
             android:name=".SettingsActivity"
