@@ -40,8 +40,8 @@
     <string name="signature_title">Your signature</string>
     <string name="reply_title">Default reply action</string>
 
-    <string name="alarmVolume">Głosnośc dzwonka/string>
-    <string name="alarmSignal">Wybierz dzwonek/string>
+    <string name="alarmVolume">Głosnośc dzwonka</string>
+    <string name="alarmSignal">Wybierz dzwonek</string>
     <string name="alarmTime">Czas alarmu</string>
     <string name="manual">Ustawienie ręczne</string>
 
