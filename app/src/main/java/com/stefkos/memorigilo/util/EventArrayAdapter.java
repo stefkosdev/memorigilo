@@ -1,6 +1,7 @@
 package com.stefkos.memorigilo.util;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +11,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.stefkos.memorigilo.R;
+import com.stefkos.memorigilo.SettingsActivity;
 
-public class EventArrayAdapter extends ArrayAdapter<String> {
+import java.util.Vector;
+
+public class EventArrayAdapter extends ArrayAdapter{
     private final Context context;
-    private final String[] values;
+    private final Vector<FoodTimeEntry> values;
 
-    public EventArrayAdapter(Context context, String[] values) {
-        super(context, -1, values);
+    public EventArrayAdapter(Context context, Vector<FoodTimeEntry> values) {
+        //super(context, -1);
+        super(context, 0 , values);
         this.context = context;
         this.values = values;
     }
@@ -28,18 +33,25 @@ public class EventArrayAdapter extends ArrayAdapter<String> {
         View rowView = inflater.inflate(R.layout.event_row_layout, parent, false);
 
         TextView textView = (TextView) rowView.findViewById(R.id.label);
-        Button imageView = (Button) rowView.findViewById(R.id.deleteEntry);
-        textView.setText(values[position]);
-        // change the icon for Windows and iPhone
-        String s = values[position];
-        /*
-        if (s.startsWith("iPhone")) {
-            imageView.setImageResource(R.drawable.no);
-        } else {
-            imageView.setImageResource(R.drawable.ok);
-        }
-*/
+        Button delete = (Button) rowView.findViewById(R.id.deleteEntry);
+        textView.setText(values.get(position).getName());
 
+        DeleteClickListener dcl = new DeleteClickListener( values.get(position).getEventID(), position, this );
+
+        delete.setOnClickListener( dcl );
+        /*
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //StatusApplication sapp = (StatusApplication)getApplication();
+
+                //sapp.show_Notification( "Title", "Going to settings");
+
+                Intent intent = new Intent(view.getContext(), SettingsActivity.class);
+                view.getContext().startActivity(intent);}
+        });
+        // change the icon for Windows and iPhone
+*/
         return rowView;
     }
 }

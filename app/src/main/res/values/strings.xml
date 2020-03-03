@@ -22,6 +22,8 @@
     <string name="supper">Supper</string>
     <string name="returnset">Return</string>
 
+    <string name="delete">Delete</string>
+
     <!-- List of meals  -->
     <string-array name="meals">
         <item>@string/breakfast</item>
