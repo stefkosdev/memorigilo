@@ -1,6 +1,7 @@
 package com.stefkos.memorigilo.timechoose;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,22 +79,28 @@ public class ChooseFragment2 extends Fragment {
         is.setOnTouchListener(new OnSwipeTouchListener(getActivity()) {
 
             public void onSwipeRight() {
-                Toast.makeText(getActivity(), "RIGHT SWIPE", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "RIGHT SWIPE", Toast.LENGTH_SHORT).show();
                 activeID++;
                 if( activeID >= imageIDS.length )
                 {
                     activeID = 0;
                 }
+
+                Log.d( this.getClass().toString(), "Right id: " + activeID );
+
                 is.setImageResource( imageIDS[activeID]);
             }
 
             public void onSwipeLeft() {
-                Toast.makeText(getActivity(), "LEFT SWIPE", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "LEFT SWIPE", Toast.LENGTH_SHORT).show();
                 activeID--;
                 if( activeID < 0 )
                 {
                     activeID = imageIDS.length-1;
                 }
+
+                Log.d( this.getClass().toString(), "Left id: " + activeID );
+
                 is.setImageResource( imageIDS[activeID]);
             }
 

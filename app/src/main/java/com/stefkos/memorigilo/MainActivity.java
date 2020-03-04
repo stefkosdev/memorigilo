@@ -16,6 +16,8 @@ import androidx.core.content.ContextCompat;
 import com.stefkos.memorigilo.timechoose.ChooseActivity;
 import com.stefkos.memorigilo.util.FoodTimeEntry;
 
+import java.util.Vector;
+
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 public class MainActivity extends Activity {
@@ -35,6 +37,8 @@ public class MainActivity extends Activity {
     private static final String PREFERENCES = "App_Preferences";
 
     public static FoodTimeEntry foodTimes[];
+    public static Vector<FoodTimeEntry> foodTimeEntries = new Vector<FoodTimeEntry>();
+
     // choose meal by ID and then change it
     public static int mealTimeChoose = 0;
 
@@ -44,6 +48,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // create default food times
 
         MainActivity.foodTimes = new FoodTimeEntry[5];
 
@@ -87,10 +93,6 @@ public class MainActivity extends Activity {
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //StatusApplication sapp = (StatusApplication)getApplication();
-
-                //sapp.show_Notification( "Title", "Going to settings");
-
                 Intent intent = new Intent(view.getContext(), SettingsActivity.class);
                 view.getContext().startActivity(intent);}
         });

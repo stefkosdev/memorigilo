@@ -1,13 +1,15 @@
 package com.stefkos.memorigilo.timechoose;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.stefkos.memorigilo.R;
 
-public class ChooseActivity extends AppCompatActivity {
+public class ChooseActivity extends FragmentActivity {//} AppCompatActivity {
 
     private static String alarmType = null;
     private static String timeType = null;
@@ -25,7 +27,7 @@ public class ChooseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_choose);
 
         // Begin the transaction
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction ft = this.getSupportFragmentManager().beginTransaction();
 
         ft.add(R.id.mainFragment, new ChooseFragment1());
 // Complete the changes added above
