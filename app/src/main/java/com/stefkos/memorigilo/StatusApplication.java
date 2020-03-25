@@ -90,7 +90,7 @@ public class StatusApplication extends Application implements Application.Activi
     @Override
     public void onActivityDestroyed(Activity activity) {
         mCurrentState = STATE_DESTROYED;
-        show_Notification("Title", "onActivityDestroyed");
+        //show_Notification("Title", "onActivityDestroyed");
     }
 
     @Override

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -16,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.stefkos.memorigilo.MainActivity;
 import com.stefkos.memorigilo.R;
 import com.stefkos.memorigilo.timechoose.ChooseActivity;
+import com.stefkos.memorigilo.util.TimeUtil;
 
 import java.text.DecimalFormat;
 
@@ -77,12 +79,20 @@ public class ChooseMealFragment2 extends Fragment {
             MainActivity.foodTimes[ MainActivity.mealTimeChoose ].setFromHour( fromTimePickerB.getHour() );
             MainActivity.foodTimes[ MainActivity.mealTimeChoose ].setToHour( toTimePickerB.getHour() );
 
-            MainActivity.saveSettings( getActivity().getApplication() );
+            boolean storeValue = TimeUtil.CheckTime( fromTimePickerB, toTimePickerB );
 
-            ChooseMealFragment1 cf = new ChooseMealFragment1();
-            ft.replace(R.id.mainMealChooseFragment, cf );
-            ft.addToBackStack(null);
-            ft.commit();
+            if( storeValue ) {
+                MainActivity.saveSettings(getActivity().getApplication());
+
+                ChooseMealFragment1 cf = new ChooseMealFragment1();
+                ft.replace(R.id.mainMealChooseFragment, cf);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+            else
+            {
+                Toast.makeText( getActivity().getApplication(), "Fix your time!", Toast.LENGTH_SHORT).show();
+            }
         }});
 
         return v;

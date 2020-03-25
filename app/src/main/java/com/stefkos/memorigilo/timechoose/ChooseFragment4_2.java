@@ -33,9 +33,9 @@ public class ChooseFragment4_2 extends Fragment {
         v = inflater.inflate(R.layout.choose_fragment4_2, parent, false);
 
         // handle back button
-        getView().setFocusableInTouchMode(true);
-        getView().requestFocus();
-        getView().setOnKeyListener( new View.OnKeyListener()
+        v.setFocusableInTouchMode(true);
+        v.requestFocus();
+        v.setOnKeyListener( new View.OnKeyListener()
         {
             @Override
             public boolean onKey( View v, int keyCode, KeyEvent event )

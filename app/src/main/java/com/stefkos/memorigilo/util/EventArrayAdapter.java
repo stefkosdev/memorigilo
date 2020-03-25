@@ -34,7 +34,7 @@ public class EventArrayAdapter extends ArrayAdapter{
 
         TextView textView = (TextView) rowView.findViewById(R.id.label);
         Button delete = (Button) rowView.findViewById(R.id.deleteEntry);
-        textView.setText(values.get(position).getName());
+        textView.setText( values.get(position).getName() + " ID " + values.get(position).getEventID() );
 
         DeleteClickListener dcl = new DeleteClickListener( values.get(position).getEventID(), position, this );
 

@@ -167,6 +167,28 @@ public class MainActivity extends Activity {
                 if (s[4] != null) MainActivity.foodTimes[4].fromString(s[4]);
             }
         }
+
+        String mts = settings.getString("MEAL_TIMES_SINGLE", null);
+
+        Log.d(MainActivity.class.toString(), "meal times load: " + mts );
+        if( mts != null ) {
+            String s[] = mts.split(delimeter);
+
+            MainActivity.foodTimeEntries = new Vector<FoodTimeEntry>();
+
+            for( String ls : s )
+            {
+                if( ls != null )
+                {
+                    FoodTimeEntry lfe = new FoodTimeEntry();
+
+                    if( lfe.fromString( ls ) == 0 && lfe != null )
+                    {
+                        MainActivity.foodTimeEntries.add(lfe);
+                    }
+                }
+            }
+        }
     }
 
     public static void saveSettings( Context ctx )
@@ -176,9 +198,18 @@ public class MainActivity extends Activity {
 
         SharedPreferences.Editor editor = settings.edit();
         String save = MainActivity.foodTimes[0].toString() + delimeter + MainActivity.foodTimes[1].toString() + delimeter + MainActivity.foodTimes[2].toString() + delimeter + MainActivity.foodTimes[3].toString() + delimeter + MainActivity.foodTimes[4].toString();
-        editor.putString("MEAL_TIMES", save );
-        editor.commit();
 
+        editor.putString("MEAL_TIMES", save );
         Log.d(MainActivity.class.toString(), "meal times save: " + save );
+
+        save = "";
+        for( FoodTimeEntry lfe : MainActivity.foodTimeEntries )
+        {
+            save += lfe.toString() + delimeter;
+        }
+        editor.putString("MEAL_TIMES_SINGLE", save );
+        Log.d(MainActivity.class.toString(), "single meal times save: " + save );
+
+        editor.commit();
     }
 }

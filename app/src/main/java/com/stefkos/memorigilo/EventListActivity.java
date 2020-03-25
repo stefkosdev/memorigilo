@@ -32,5 +32,7 @@ public class EventListActivity extends Activity {
         eventsListV = (ListView) findViewById(R.id.listOfEvents);
         //eventsListV.setAdapter(adapter);
         eventsListV.setAdapter( eaa );
+
+        //MainActivity.saveSettings(v.getContext() );
     }
 }

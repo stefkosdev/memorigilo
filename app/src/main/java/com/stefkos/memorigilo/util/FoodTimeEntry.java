@@ -124,6 +124,7 @@ public class FoodTimeEntry {
             }catch( ArrayIndexOutOfBoundsException aiob )   //if old config is loaded we must know about that
             {
                 eventID = -1;
+                return 2;
             }
         }
         else

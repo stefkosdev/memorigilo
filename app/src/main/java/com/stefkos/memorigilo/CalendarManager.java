@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.provider.BaseColumns;
 import android.provider.CalendarContract;
 import android.provider.CalendarContract.Calendars;
 import android.text.format.DateUtils;
@@ -124,7 +125,7 @@ public class CalendarManager {
         Calendar toDate = Calendar.getInstance();
         toDate.set( toDate.get(Calendar.YEAR), toDate.get(Calendar.MONTH), toDate.get(Calendar.DAY_OF_MONTH), toHour, toMins );
 
-        Log.d( CLASS_NAME, "Create event, time: " + fromDate.toString() );
+        Log.d( CLASS_NAME, "Create event, start time: " + fromDate.toString() + " end time: " + toDate.toString() );
 
         long startTime = fromDate.getTimeInMillis();
         long endTime = toDate.getTimeInMillis();
@@ -172,6 +173,9 @@ public class CalendarManager {
         {
             Log.d( CLASS_NAME, "Create event, Security Exception " + se.toString() );
         }
+
+        Log.i( CLASS_NAME, "EVENT CREATED: " + eventId );
+
         return eventId;
     }
 
@@ -181,32 +185,47 @@ public class CalendarManager {
 
     public int deleteEvent(long entryID) throws SecurityException{
         int iNumRowsDeleted = 0;
-        /*
-        if (ActivityCompat.checkSelfPermission(lc, Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(MainActivity, new String[]{Manifest.permission.WRITE_CALENDAR}, 1);
-        }
-        */
 
         Uri deleteUri = null;
         deleteUri = ContentUris.withAppendedId(Events.CONTENT_URI, Long.parseLong(String.valueOf(entryID)));
         int rows = lc.getContentResolver().delete(deleteUri, null, null);
-        Toast.makeText(lc, "Event deleted", Toast.LENGTH_LONG).show();
-/*
-        Uri uri = CalendarContract.Instances.CONTENT_URI;
+        Toast.makeText(lc, "Event deleted: " + entryID + " rows deleted: " + rows , Toast.LENGTH_LONG).show();
+        Log.i(CLASS_NAME, "Event deleted: " + entryID + " rows deleted: " + rows );
 
-        String mSelectionClause = CalendarContract.Instances.EVENT_ID+ " = ?";
-        String[] mSelectionArgs = {"" + entryID };
-
-        int updCount = lc.getContentResolver().delete(uri,mSelectionClause,mSelectionArgs);
-
-        if( entryID > 0 ) {
-            Uri eventsUri = Uri.parse("content://com.android.calendar/events");
-            Uri eventUri = ContentUris.withAppendedId(eventsUri, entryID);
-            iNumRowsDeleted = lc.getContentResolver().delete(eventUri, null, null);
-        }
-        Log.i(CLASS_NAME, "Deleted " + iNumRowsDeleted + " calendar entry.");
-*/
         return iNumRowsDeleted;
+    }
+
+    //
+    //
+    //
+
+    private void setFromToDate( Calendar from, Calendar to )
+    {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat    displayFormatter = new SimpleDateFormat("MMMM dd, yyyy (EEEE)");
+        String stime=displayFormatter.format(calendar.getTime());
+
+        SimpleDateFormat formatterr = new SimpleDateFormat("hh:mm:ss MM/dd/yy");
+
+        SimpleDateFormat startFormatter = new SimpleDateFormat("MM/dd/yy");
+        String dateString = startFormatter.format(calendar.getTime());
+        Date startDateCCC = null;
+        try {
+            startDateCCC = formatterr.parse("0:00:00 " + dateString);
+        } catch( ParseException e ){
+            e.printStackTrace();
+        }
+        from.setTime( startDateCCC );
+
+        Calendar endOfDay = Calendar.getInstance();
+
+        Date dateCCC = null;
+        try {
+            dateCCC = formatterr.parse("23:59:59 " + dateString );
+        } catch( ParseException e ){
+            e.printStackTrace();
+        }
+        endOfDay.setTime( dateCCC );
     }
 
     //
@@ -222,12 +241,13 @@ public class CalendarManager {
         // For each calendar, display all the events from the previous week to the end of next week.
 
         {
-            Uri.Builder builder = Uri.parse("content://com.android.calendar/instances/when").buildUpon();
-            //Uri.Builder builder = Uri.parse("content://com.android.calendar/calendars").buildUpon();
+            /*
+            //Uri.Builder builder = Uri.parse("content://com.android.calendar/instances/when").buildUpon();
+            Uri.Builder builder = Uri.parse("content://com.android.calendar/calendars").buildUpon();
             long now = new Date().getTime();
 
-            ContentUris.appendId(builder, now  );// * 10000);
-            ContentUris.appendId(builder, now + DateUtils.DAY_IN_MILLIS );//* 10000);
+            //ContentUris.appendId(builder, now  );// * 10000);
+            //ContentUris.appendId(builder, now + DateUtils.DAY_IN_MILLIS );//* 10000);
 
             // get only events which happened today
 
@@ -248,37 +268,115 @@ public class CalendarManager {
             Date startDateCCC = null;
             try {
                 startDateCCC = formatterr.parse("0:00:00 " + dateString);
-            } catch (ParseException e) {
+            } catch( ParseException e ){
                 e.printStackTrace();
             }
-            startOfDay.setTime(startDateCCC);
+            startOfDay.setTime( startDateCCC );
 
             Calendar endOfDay = Calendar.getInstance();
 
             Date dateCCC = null;
             try {
-                dateCCC = formatterr.parse("23:59:59 " + dateString);
-            } catch (ParseException e) {
+                dateCCC = formatterr.parse("23:59:59 " + dateString );
+            } catch( ParseException e ){
                 e.printStackTrace();
             }
-            endOfDay.setTime(dateCCC);
+            endOfDay.setTime( dateCCC );
 
             // get only events which happened today (END)
 
             Long sd = new Long( (startOfDay.getTimeInMillis()) );
             Long ed = new Long( (endOfDay.getTimeInMillis()) );
-            String selectString = "Events.calendar_id=" + calendarID + " and (" + Instances.DTSTART + ">=" + sd.toString() + " and " + CalendarContract.Instances.DTEND + "<" + ed.toString() + ")";
+            String selectString = Instances.CALENDAR_ID + calendarID + " and (" + Instances.DTSTART + ">=" + sd.toString() + " and " + CalendarContract.Instances.DTEND + "<" + ed.toString() + ")";
 
-            Cursor eventCursor = contentResolver.query(builder.build(),
-                    new String[]  { Events.TITLE, Events.DTSTART, Events.DTEND, Events._ID}, selectString ,
-                    null, "startDay ASC, startMinute ASC");
+
+            //Cursor eventCursor = contentResolver.query(builder.build(),
+             //   new String[]  { Events.TITLE, Events.DTSTART, Events.DTEND, Events._ID}, selectString ,null, "startDay ASC, startMinute ASC" );
                     //new String[]  { CalendarContract.Events.TITLE, "begin", "end", CalendarContract.Events.ALL_DAY,CalendarContract.Events._ID}, "Calendars._id=" + calendarID,
                     //null, "startDay ASC, startMinute ASC");
+            Cursor eventCursor = contentResolver.query(builder.build(),
+                    new String[]  { Instances.TITLE, Instances.DTSTART, Instances.DTEND, Instances._ID}, selectString ,null, "startDay ASC, startMinute ASC" );
+            */
+
+
+            String dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+            SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+            sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
+
+            Calendar startOfDay = Calendar.getInstance();
+            Calendar endOfDay = Calendar.getInstance();
+
+            setFromToDate( startOfDay, endOfDay );
+
+
+            Calendar calendar = Calendar.getInstance();
+            //calendar.add( Calendar.DAY_OF_MONTH, 1 );
+
+            //String selectString = Instances.CALENDAR_ID + calendarID + " and (" + Instances.DTSTART + ">=" + sd.toString() + " and " + CalendarContract.Instances.DTEND + "<" + ed.toString() + ")";
+            //Cursor eventCursor = contentResolver.query(builder.build(),
+            //        new String[]  { Events.TITLE, Events.DTSTART, Events.DTEND, Events._ID}, selectString ,null, "startDay ASC, startMinute ASC" );
+            //new String[]  { CalendarContract.Events.TITLE, "begin", "end", CalendarContract.Events.ALL_DAY,CalendarContract.Events._ID}, "Calendars._id=" + calendarID,
+            //null, "startDay ASC, startMinute ASC");
+
+            //Calendar calendar = Calendar.getInstance();
+            calendar.set(calendar.get(Calendar.YEAR ) , calendar.get( Calendar.MONTH ), calendar.get( Calendar.DAY_OF_MONTH ), 0, 0, 0);
+            long startDay = calendar.getTimeInMillis();
+            calendar.set(calendar.get(Calendar.YEAR ) , calendar.get( Calendar.MONTH ), calendar.get( Calendar.DAY_OF_MONTH ), 23, 59, 59);
+            long endDay = calendar.getTimeInMillis();
+
+            String[] projection;
+            /*
+            String[] projection = new String[]{
+                    //CalendarContract.Instances.EVENT_ID,
+                    CalendarContract.Instances.TITLE,
+                    CalendarContract.Instances.BEGIN,
+                    CalendarContract.Instances.END
+            };
+            */
+
+/*
+            String selection = "("+
+                        "(" + CalendarContract.Instances.BEGIN + " >= " + startOfDay.getTimeInMillis() + ") " +
+                    "AND (" + CalendarContract.Instances.END + " <= " + endOfDay.getTimeInMillis()     + ") " +
+                    "AND (" + CalendarContract.Instances.VISIBLE + " = 1 "                            + " ) " +
+                    "AND (" + CalendarContract.Instances.STATUS + " IS NOT " + CalendarContract.Events.STATUS_CANCELED + ") " +
+                    "AND (" + Instances.CALENDAR_ID + " = " + calendarID + " )"+
+                    ")";
+*/
+            String selection = null;
+
+            projection = new String[] { CalendarContract.Events.TITLE, CalendarContract.Events.DTSTART, CalendarContract.Events.DTEND, Events._ID };
+            selection = "("+
+                    "(" + Events.DTSTART+ " >= " + startOfDay.getTimeInMillis() + ") " +
+                    "AND (" + Events.DTEND + " <= " + endOfDay.getTimeInMillis()    + ") " +
+                    "AND (" + Events.CALENDAR_ID + " = " + calendarID + ") " +
+                    ")";
+
+/*
+            projection = new String[] { CalendarContract.Instances.TITLE, CalendarContract.Instances.DTSTART, CalendarContract.Instances.DTEND, Events._ID };
+            selection = "("+
+                    "(" + Instances.DTSTART+ " >= " + startOfDay.getTimeInMillis() + ") " +
+                    "AND (" + Instances.DTEND + " <= " + endOfDay.getTimeInMillis()    + ") " +
+                    "AND (" + Instances.CALENDAR_ID + " = " + calendarID + ") " +
+                    ")";
+*/
+            //String selection = CalendarContract.Instances.BEGIN+ " >= ? AND " + CalendarContract.Instances.END + "<= ?";// AND " + Events._ID + "= ?";
+            //String[] selectionArgs = new String[] { Long.toString(startDay), Long.toString(endDay), (new Long(calendarID)).toString() };
+
+            Cursor eventCursor = null;
+
+            try {
+                eventCursor = contentResolver.query(CalendarContract.Events.CONTENT_URI, projection, selection, null, null);
+                //eventCursor = contentResolver.query(CalendarContract.Instances.CONTENT_URI, projection, selection, null, null);
+            }catch( SecurityException se )
+            {
+                return null;
+            }
 
             Log.d( this.getClass().toString(), "eventCursor count="+eventCursor.getCount());
-            if(eventCursor.getCount()>0)
+            if( eventCursor.getCount()>0 )
             {
-                if(eventCursor.moveToFirst())
+                if( eventCursor.moveToFirst() )
                 {
                     do
                     {
@@ -288,9 +386,9 @@ public class CalendarManager {
                         final Long eventID = eventCursor.getLong(3);
 
                         Calendar beginCalendar = GregorianCalendar.getInstance(); // creates a new calendar instance
-                        beginCalendar.setTime(begin);   // assigns calendar to given date
+                        beginCalendar.setTime( begin );   // assigns calendar to given date
                         Calendar endCalendar = GregorianCalendar.getInstance(); // creates a new calendar instance
-                        endCalendar.setTime(end);   // assigns calendar to given date
+                        endCalendar.setTime( end );   // assigns calendar to given date
 
                         //  System.out.println("Title: " + title + " Begin: " + begin + " End: " + end +
                         //            " All Day: " + allDay);
@@ -314,7 +412,7 @@ public class CalendarManager {
                         /* the calendar control metting-begin events Respose  sub-string (starts....hare) */
 
                         Pattern p = Pattern.compile(" ");
-                        String[] items = p.split(begin.toString());
+                        String[] items = p.split( begin.toString() );
                         String scalendar_metting_beginday,scalendar_metting_beginmonth,scalendar_metting_beginyear,scalendar_metting_begindate,scalendar_metting_begintime,scalendar_metting_begingmt;
 
                         scalendar_metting_beginday = items[0];
@@ -327,11 +425,11 @@ public class CalendarManager {
                         String  calendar_metting_beginday = scalendar_metting_beginday;
                         String  calendar_metting_beginmonth = scalendar_metting_beginmonth.toString().trim();
 
-                        int  calendar_metting_begindate = Integer.parseInt(scalendar_metting_begindate.trim());
+                        int  calendar_metting_begindate = Integer.parseInt( scalendar_metting_begindate.trim() );
 
                         String calendar_metting_begintime = scalendar_metting_begintime.toString().trim();
                         String calendar_metting_begingmt = scalendar_metting_begingmt;
-                        int calendar_metting_beginyear = Integer.parseInt(scalendar_metting_beginyear.trim());
+                        int calendar_metting_beginyear = Integer.parseInt( scalendar_metting_beginyear.trim() );
 
 
                         Log.d( this.getClass().toString(), "calendar_metting_beginday="+calendar_metting_beginday);

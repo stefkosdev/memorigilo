@@ -25,5 +25,7 @@ public class DeleteClickListener  implements View.OnClickListener {
         MainActivity.calendarManager.deleteEvent( this.eventID );
         this.eventAA.remove(eventAA.getItem(this.listId));
         this.eventAA.notifyDataSetChanged();
+
+        MainActivity.saveSettings(v.getContext() );
     }
 }

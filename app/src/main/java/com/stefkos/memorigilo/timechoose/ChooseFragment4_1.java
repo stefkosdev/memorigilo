@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.stefkos.memorigilo.MainActivity;
 import com.stefkos.memorigilo.R;
+import com.stefkos.memorigilo.util.FoodTimeEntry;
 
 public class ChooseFragment4_1 extends Fragment {
 
@@ -106,7 +107,19 @@ public class ChooseFragment4_1 extends Fragment {
                     toMins = mins;
                 }
 
-                MainActivity.calendarManager.createEvent( title, "WEZ!", hour, mins, toHour, toMins );
+                long ret = MainActivity.calendarManager.createEvent( title, "WEZ!", hour, mins, toHour, toMins );
+
+                FoodTimeEntry nte = new FoodTimeEntry();
+                nte.setName( title );
+                nte.setEventID( ret );
+                nte.setFromMin( mins );
+                nte.setFromHour( hour );
+                nte.setToMin( toMins );
+                nte.setToHour( toHour );
+
+                // add new event to list and store it on device
+                MainActivity.foodTimeEntries.add( nte );
+                MainActivity.saveSettings(v.getContext() );
 
                 Intent intent = new Intent(view.getContext(), MainActivity.class);
                 view.getContext().startActivity(intent);}
