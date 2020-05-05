@@ -14,7 +14,7 @@
     <Button
         android:id="@+id/othersB"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="175dp"
         android:gravity="center|center_horizontal|top|center_vertical"
         android:text="@string/others"
         android:textAlignment="center"
