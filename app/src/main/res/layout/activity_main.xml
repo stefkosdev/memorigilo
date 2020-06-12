@@ -6,52 +6,106 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="44dp">
 
         <Button
             android:id="@+id/settingsB"
-            android:layout_width="match_parent"
+            android:layout_width="131dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:text="@string/title_activity_settings" />
-
-        <DigitalClock
-            android:id="@+id/digitalClock1"
-            android:layout_width="330dp"
-            android:layout_height="161dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="70dp"
-            android:text="DigitalClock"
-            android:textSize="106sp" />
-
-        <Button
-            android:id="@+id/remindB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/remind"
-            android:textSize="40sp" />
-
-        <Button
-            android:id="@+id/remindListB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/eventList"
-            android:textSize="40sp" />
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="69dp"
+            android:layout_marginBottom="86dp"
+            android:text="@string/title_activity_settings"
+            app:layout_constraintBottom_toTopOf="@+id/digitalClock1"
+            app:layout_constraintEnd_toStartOf="@+id/mainManualB"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/mainManualB"
-            android:layout_width="match_parent"
+            android:layout_width="131dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:text="@string/manual" />
+            android:layout_marginStart="69dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="86dp"
+            android:text="@string/manual"
+            app:layout_constraintBottom_toTopOf="@+id/digitalClock1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/settingsB"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+        <DigitalClock
+            android:id="@+id/digitalClock1"
+            android:layout_width="331dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="127dp"
+            android:text="@string/digitalclock"
+            android:textAlignment="center"
+            android:textSize="106sp"
+            app:layout_constraintBottom_toTopOf="@+id/remindB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settingsB" />
+
+        <Button
+            android:id="@+id/remindB"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="211dp"
+            android:text="@string/remind"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+
+        <Button
+            android:id="@+id/remindListB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="139dp"
+            android:text="@string/eventList"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/remindB" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="106dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="336dp"
+            android:layout_marginBottom="17dp"
+            android:src="@drawable/alarm"
+            app:layout_constraintBottom_toTopOf="@+id/remindB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="67dp"
+            android:layout_height="59dp"
+            android:src="@drawable/ustawienia"
+            tools:layout_editor_absoluteX="41dp"
+            tools:layout_editor_absoluteY="92dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

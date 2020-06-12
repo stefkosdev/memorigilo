@@ -33,11 +33,11 @@
     </string-array>
 
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
+    <string name="messages_header">Wiadomości</string>
     <string name="sync_header">Sync</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
+    <string name="signature_title">Twój podpis</string>
     <string name="reply_title">Default reply action</string>
 
     <string name="alarmVolume">Głosnośc dzwonka</string>
@@ -45,9 +45,9 @@
     <string name="alarmTime">Czas alarmu</string>
     <string name="manual">Instrukcja</string>
 
-    <string name="alarmTime15">15 seconds</string>
-    <string name="alarmTime30">30 seconds</string>
-    <string name="alarmTime60">minute</string>
+    <string name="alarmTime15">15 sekund</string>
+    <string name="alarmTime30">30 sekund</string>
+    <string name="alarmTime60">minuta</string>
     <string name="alarmTimeOff">Wyłącz</string>
 
     <string name="select">Wybierz</string>
@@ -58,4 +58,7 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="delete">Kasuj</string>
+    <string name="eventList">Lista zdarzeń</string>
+    <string name="digitalclock">Zegar cyfrowy</string>
 </resources>
