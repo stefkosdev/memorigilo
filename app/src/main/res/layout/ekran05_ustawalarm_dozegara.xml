@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="307dp"
+        android:layout_height="50dp"
+        android:text="Ustaw alarm"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="44dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="156dp"
+        android:layout_height="42dp"
+        android:text="@string/do_zegara"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <TimePicker
+        android:id="@+id/alarmTimePicker"
+        android:layout_width="287dp"
+        android:layout_height="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:timePickerMode="spinner"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="151dp" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="166dp"
+        android:layout_height="47dp"
+        android:text="Wybór czasu"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="311dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="413dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="226dp"
+        android:layout_height="28dp"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="532dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:text="Wybór ikony"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="571dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zatwierdź"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="640dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
