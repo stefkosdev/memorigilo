@@ -16,6 +16,7 @@ public class EventListActivity extends Activity {
 
     ListView eventsListV = null;
     String events[] = new String[0];
+    private static Vector<FoodTimeEntry> fte = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,7 @@ public class EventListActivity extends Activity {
         setContentView(R.layout.activity_event_list);
 
         // get all calendar entries
-        Vector<FoodTimeEntry> fte = MainActivity.calendarManager.readEntryTimes();
+        fte = MainActivity.calendarManager.readEntryTimes();
 
         EventArrayAdapter eaa = new EventArrayAdapter( this, fte );
         //final ArrayAdapter<FoodTimeEntry> adapter = new ArrayAdapter<FoodTimeEntry>( this,

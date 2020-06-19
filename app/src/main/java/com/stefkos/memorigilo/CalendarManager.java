@@ -164,7 +164,7 @@ public class CalendarManager {
             ContentValues reminderValues = new ContentValues();
 
             reminderValues.put(Reminders.EVENT_ID, eventId );
-            reminderValues.put(Reminders.MINUTES, 1);
+            reminderValues.put(Reminders.MINUTES, 15 );
             reminderValues.put(Reminders.METHOD, Reminders.METHOD_ALERT);
 
             String reminderUriString = "content://com.android.calendar/reminders";
@@ -241,64 +241,6 @@ public class CalendarManager {
         // For each calendar, display all the events from the previous week to the end of next week.
 
         {
-            /*
-            //Uri.Builder builder = Uri.parse("content://com.android.calendar/instances/when").buildUpon();
-            Uri.Builder builder = Uri.parse("content://com.android.calendar/calendars").buildUpon();
-            long now = new Date().getTime();
-
-            //ContentUris.appendId(builder, now  );// * 10000);
-            //ContentUris.appendId(builder, now + DateUtils.DAY_IN_MILLIS );//* 10000);
-
-            // get only events which happened today
-
-            Calendar calendar = Calendar.getInstance();
-            SimpleDateFormat    displayFormatter = new SimpleDateFormat("MMMM dd, yyyy (EEEE)");
-            String stime=displayFormatter.format(calendar.getTime());
-
-            SimpleDateFormat startFormatter = new SimpleDateFormat("MM/dd/yy");
-            String dateString = startFormatter.format(calendar.getTime());
-
-            long after = calendar.getTimeInMillis();
-
-            SimpleDateFormat formatterr = new SimpleDateFormat("hh:mm:ss MM/dd/yy");
-
-
-            Calendar startOfDay = Calendar.getInstance();
-
-            Date startDateCCC = null;
-            try {
-                startDateCCC = formatterr.parse("0:00:00 " + dateString);
-            } catch( ParseException e ){
-                e.printStackTrace();
-            }
-            startOfDay.setTime( startDateCCC );
-
-            Calendar endOfDay = Calendar.getInstance();
-
-            Date dateCCC = null;
-            try {
-                dateCCC = formatterr.parse("23:59:59 " + dateString );
-            } catch( ParseException e ){
-                e.printStackTrace();
-            }
-            endOfDay.setTime( dateCCC );
-
-            // get only events which happened today (END)
-
-            Long sd = new Long( (startOfDay.getTimeInMillis()) );
-            Long ed = new Long( (endOfDay.getTimeInMillis()) );
-            String selectString = Instances.CALENDAR_ID + calendarID + " and (" + Instances.DTSTART + ">=" + sd.toString() + " and " + CalendarContract.Instances.DTEND + "<" + ed.toString() + ")";
-
-
-            //Cursor eventCursor = contentResolver.query(builder.build(),
-             //   new String[]  { Events.TITLE, Events.DTSTART, Events.DTEND, Events._ID}, selectString ,null, "startDay ASC, startMinute ASC" );
-                    //new String[]  { CalendarContract.Events.TITLE, "begin", "end", CalendarContract.Events.ALL_DAY,CalendarContract.Events._ID}, "Calendars._id=" + calendarID,
-                    //null, "startDay ASC, startMinute ASC");
-            Cursor eventCursor = contentResolver.query(builder.build(),
-                    new String[]  { Instances.TITLE, Instances.DTSTART, Instances.DTEND, Instances._ID}, selectString ,null, "startDay ASC, startMinute ASC" );
-            */
-
-
             String dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
             SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
             sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
@@ -409,7 +351,7 @@ public class CalendarManager {
 
                         fdte.add( newentry );
 
-                        /* the calendar control metting-begin events Respose  sub-string (starts....hare) */
+                        // the calendar control metting-begin events Respose  sub-string (starts....hare)
 
                         Pattern p = Pattern.compile(" ");
                         String[] items = p.split( begin.toString() );
@@ -444,10 +386,6 @@ public class CalendarManager {
 
                         Log.d( this.getClass().toString(), "calendar_metting_beginyear ="+calendar_metting_beginyear);
 
-                        // the calendar control metting-begin events Respose  sub-string (starts....ends)
-
-                        // the calendar control metting-end events Respose  sub-string (starts....hare)
-
                         Pattern p1 = Pattern.compile(" ");
                         String[] enditems = p.split(end.toString());
                         String scalendar_metting_endday,scalendar_metting_endmonth,scalendar_metting_endyear,scalendar_metting_enddate,scalendar_metting_endtime,scalendar_metting_endgmt;
@@ -459,7 +397,6 @@ public class CalendarManager {
                         scalendar_metting_endgmt = enditems[4];
                         scalendar_metting_endyear = enditems[5];
 
-
                         String  calendar_metting_endday = scalendar_metting_endday;
                         String  calendar_metting_endmonth = scalendar_metting_endmonth.toString().trim();
 
@@ -468,7 +405,6 @@ public class CalendarManager {
                         String calendar_metting_endtime = scalendar_metting_endtime.toString().trim();
                         String calendar_metting_endgmt = scalendar_metting_endgmt;
                         int calendar_metting_endyear = Integer.parseInt(scalendar_metting_endyear.trim());
-
 
                         Log.d( this.getClass().toString(), "calendar_metting_beginday="+calendar_metting_endday);
 
@@ -487,28 +423,8 @@ public class CalendarManager {
                         Log.d( this.getClass().toString(), "only date begin of events="+begin.getDate());
                         Log.d( this.getClass().toString(), "only begin time of events="+begin.getHours() + ":" +begin.getMinutes() + ":" +begin.getSeconds());
 
-
                         Log.d( this.getClass().toString(), "only date begin of events="+end.getDate());
                         Log.d( this.getClass().toString(), "only begin time of events="+end.getHours() + ":" +end.getMinutes() + ":" +end.getSeconds());
-
-                        //beg_date = begin.getDate();
-                        //mbeg_date = begin.getDate()+"/"+calendar_metting_beginmonth+"/"+calendar_metting_beginyear;
-                        //beg_time = begin.getHours();
-
-                        //Log.d( this.getClass().toString(), "the vaule of mbeg_date="+mbeg_date.toString().trim());
-                        //end_date = end.getDate();
-                        //end_time = end.getHours();
-
-
-                        //CallHandlerUI.metting_begin_date.add(beg_date.toString());
-                        //CallHandlerUI.metting_begin_mdate.add(mbeg_date.toString());
-
-                        //CallHandlerUI.metting_begin_mtime.add(calendar_metting_begintime.toString());
-
-                        //CallHandlerUI.metting_end_date.add(end_date.toString());
-                        //CallHandlerUI.metting_end_time.add(end_time.toString());
-                        //CallHandlerUI.metting_end_mtime.add(calendar_metting_endtime.toString());
-
                     }
                     while(eventCursor.moveToNext());
                 }
