@@ -61,4 +61,18 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="eventList">Event list</string>
     <string name="digitalclock">DigitalClock</string>
+    <string name="ustawienia">Settings</string>
+    <string name="pory_posilkow">Meal times</string>
+    <string name="kolorystyka">Color</string>
+    <string name="ciemny">Dark</string>
+    <string name="jasny">Bright</string>
+    <string name="ustaw_d_wi_k">Set sound</string>
+    <string name="lista_alarm_w">Alarm list</string>
+    <string name="ustaw_alarm">Set an alarm</string>
+    <string name="todo">TODO</string>
+    <string name="do_posilku">With a meal</string>
+    <string name="do_zegara">To the clock</string>
+    <string name="todo">TODO</string>
+    <string name="instrukcja">Instruction</string>
+    <string name="jezyk">Język</string>
 </resources>
