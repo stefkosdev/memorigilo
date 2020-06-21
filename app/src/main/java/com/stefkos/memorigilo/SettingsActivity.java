@@ -48,7 +48,7 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
         lightThemeRB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                darkThemeRB.setSelected(false);
+                darkThemeRB.setEnabled(false);
                 MainActivity.Theme = "Light";
                 setTheme(R.style.LightTheme);
                 MainActivity.saveSettingsTheme(view.getContext());
@@ -58,7 +58,7 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
         darkThemeRB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lightThemeRB.setSelected(false);
+                lightThemeRB.setEnabled(false);
                 MainActivity.Theme = "Dark";
                 setTheme(R.style.DarkTheme);
                 MainActivity.saveSettingsTheme(view.getContext());
