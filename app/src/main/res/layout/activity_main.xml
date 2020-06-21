@@ -36,7 +36,7 @@
             tools:src="@drawable/ustawienia" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/manualB"
             android:layout_width="71dp"
             android:layout_height="92dp"
             android:src="@drawable/instrukcja"
