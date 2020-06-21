@@ -55,8 +55,8 @@
         android:layout_marginBottom="39dp"
         android:text="@string/settings"
         android:textAlignment="center"
-        android:textSize="36sp"
         android:textColor="?attr/textColor"
+        android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,38 +71,9 @@
         android:textAlignment="center"
         android:textSize="24sp"
         android:textColor="?attr/textColor"
-        app:layout_constraintBottom_toTopOf="@+id/DarkRB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <RadioButton
-        android:id="@+id/DarkRB"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginBottom="124dp"
-        android:text="@string/dark"
-        android:textSize="24sp"
-        android:textColor="?attr/textColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/LightRB"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <RadioButton
-        android:id="@+id/LightRB"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="78dp"
-        android:layout_marginEnd="30dp"
-        android:text="@string/white"
-        android:textSize="24sp"
-        android:textColor="?attr/textColor"
-        app:layout_constraintBottom_toBottomOf="@+id/DarkRB"
-        app:layout_constraintEnd_toStartOf="@+id/DarkRB"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/DarkRB" />
 
     <Button
         android:id="@+id/button"
@@ -116,5 +87,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/themeGroup">
+        <RadioButton android:id="@+id/LightRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/textColor"
+            android:text="@string/white"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/DarkRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/textColor"
+            android:text="@string/dark"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

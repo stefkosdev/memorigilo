@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import androidx.preference.PreferenceFragmentCompat;
 
@@ -17,6 +18,7 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
     Button manualB = null;
     RadioButton lightThemeRB = null;
     RadioButton darkThemeRB = null;
+    RadioGroup themeGroup = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,15 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
 
         lightThemeRB = findViewById(R.id.LightRB);
         darkThemeRB = findViewById(R.id.DarkRB);
+        themeGroup = findViewById(R.id.themeGroup);
+
+        if( MainActivity.Theme.equals("Dark") ) {
+            themeGroup.check(themeGroup.getChildAt(1).getId());
+        }
+        else
+        {
+            themeGroup.check(themeGroup.getChildAt(0).getId());
+        }
 
         setMealTimesB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +59,7 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
         lightThemeRB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                darkThemeRB.setEnabled(false);
+                //darkThemeRB.setEnabled(false);
                 MainActivity.Theme = "Light";
                 setTheme(R.style.LightTheme);
                 MainActivity.saveSettingsTheme(view.getContext());
@@ -58,7 +69,7 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
         darkThemeRB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lightThemeRB.setEnabled(false);
+                //lightThemeRB.setEnabled(false);
                 MainActivity.Theme = "Dark";
                 setTheme(R.style.DarkTheme);
                 MainActivity.saveSettingsTheme(view.getContext());
