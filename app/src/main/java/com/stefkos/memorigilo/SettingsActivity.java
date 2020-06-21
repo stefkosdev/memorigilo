@@ -18,7 +18,7 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings_activity);
+        setContentView(R.layout.ekran02_ustawienia);
 
         setMealTimesB = findViewById(R.id.setMealsB );
         manualB =  findViewById(R.id.manualB );

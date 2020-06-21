@@ -26,13 +26,13 @@
             android:text="@string/digitalclock"
             android:textAlignment="center"
             android:textSize="96sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton4"
+            app:layout_constraintBottom_toTopOf="@+id/remindB"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+            app:layout_constraintTop_toBottomOf="@+id/settingsB" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/settingsB"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="58dp"
@@ -58,11 +58,11 @@
             android:src="@drawable/instrukcja"
             app:layout_constraintBottom_toTopOf="@+id/digitalClock1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintStart_toEndOf="@+id/settingsB"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/remindB"
             android:layout_width="135dp"
             android:layout_height="0dp"
             android:scaleType="fitCenter"
@@ -92,8 +92,8 @@
             android:text="@string/ustaw_alarm"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/imageButton5"
-            app:layout_constraintEnd_toEndOf="@+id/imageButton4"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+            app:layout_constraintEnd_toEndOf="@+id/remindB"
+            app:layout_constraintTop_toBottomOf="@+id/remindB" />
 
         <TextView
             android:id="@+id/textView11"

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -30,8 +31,9 @@ public class MainActivity extends Activity {
     Button rightButton = null;
     Button upButton = null;
     Button okButton = null;
-    Button settings = null;
-    Button remind = null;
+    ImageButton settings = null;
+    ImageButton remind = null;
+    ImageButton manual = null;
     Button eventList = null;
 
     private static final String PREFERENCES = "App_Preferences";
@@ -84,7 +86,7 @@ public class MainActivity extends Activity {
         //okButton = findViewById(R.id.okB );
         settings = findViewById(R.id.settingsB);
         remind = findViewById(R.id.remindB);
-        eventList = findViewById(R.id.remindListB);
+        //eventList = findViewById(R.id.remindListB);
 
         //
         //
