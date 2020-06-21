@@ -53,6 +53,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setTheme(R.style.LightTheme);
         // create default food times
 
         MainActivity.foodTimes = new FoodTimeEntry[5];
@@ -64,7 +65,7 @@ public class MainActivity extends Activity {
         MainActivity.foodTimes[4] = new FoodTimeEntry();
 
         MainActivity.loadSettings( this.getApplication() );
-        if( Theme.equals("Dark") ) {
+        if( MainActivity.Theme.equals("Dark") ) {
             setTheme(R.style.DarkTheme);
         }
         else

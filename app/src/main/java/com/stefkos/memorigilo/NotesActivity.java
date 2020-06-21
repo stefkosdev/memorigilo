@@ -21,6 +21,15 @@ public class NotesActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if( MainActivity.Theme.equals("Dark") ) {
+            setTheme(R.style.DarkTheme);
+        }
+        else
+        {
+            setTheme(R.style.LightTheme);
+        }
+
         setContentView(R.layout.ekran08_zapiski_lista);
 
         //MainActivity.saveSettings(v.getContext() );

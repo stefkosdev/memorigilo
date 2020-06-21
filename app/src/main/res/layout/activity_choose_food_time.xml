@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mealtimechoose.ChooseMealTimeActivity">
+    tools:context=".mealtimechoose.ChooseMealTimeActivity"
+    android:background="?attr/bgColor">
 
     <FrameLayout
         android:id="@+id/mainMealChooseFragment"

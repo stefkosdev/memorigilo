@@ -18,6 +18,15 @@ public class ManualActivity extends Activity{// AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if( MainActivity.Theme.equals("Dark") ) {
+            setTheme(R.style.DarkTheme);
+        }
+        else
+        {
+            setTheme(R.style.LightTheme);
+        }
+
         setContentView(R.layout.ekran03_instrukcja);
 
         //setMealTimesB = findViewById(R.id.setMealsB );

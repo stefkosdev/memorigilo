@@ -21,6 +21,15 @@ public class EventListActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if( MainActivity.Theme.equals("Dark") ) {
+            setTheme(R.style.DarkTheme);
+        }
+        else
+        {
+            setTheme(R.style.LightTheme);
+        }
+
         setContentView(R.layout.activity_event_list);
 
         // get all calendar entries

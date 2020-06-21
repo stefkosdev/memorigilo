@@ -21,6 +21,15 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if( MainActivity.Theme.equals("Dark") ) {
+            setTheme(R.style.DarkTheme);
+        }
+        else
+        {
+            setTheme(R.style.LightTheme);
+        }
+
         setContentView(R.layout.ekran02_ustawienia);
 
         setMealTimesB = findViewById(R.id.setMealsB );

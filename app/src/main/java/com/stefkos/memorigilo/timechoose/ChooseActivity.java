@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.stefkos.memorigilo.MainActivity;
 import com.stefkos.memorigilo.R;
 
 public class ChooseActivity extends FragmentActivity {//} AppCompatActivity {
@@ -24,6 +25,15 @@ public class ChooseActivity extends FragmentActivity {//} AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if( MainActivity.Theme.equals("Dark") ) {
+            setTheme(R.style.DarkTheme);
+        }
+        else
+        {
+            setTheme(R.style.LightTheme);
+        }
+
         setContentView(R.layout.activity_choose);
 
         // Begin the transaction
