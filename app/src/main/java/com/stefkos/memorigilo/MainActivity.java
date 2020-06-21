@@ -34,6 +34,7 @@ public class MainActivity extends Activity {
     ImageButton settings = null;
     ImageButton remind = null;
     ImageButton manual = null;
+    ImageButton notes = null;
     ImageButton eventList = null;
 
     private static final String PREFERENCES = "App_Preferences";
@@ -88,6 +89,7 @@ public class MainActivity extends Activity {
         remind = findViewById(R.id.remindB);
         manual = findViewById(R.id.manualB);
         eventList = findViewById(R.id.alarmListB);
+        notes = findViewById(R.id.notesB);
 
         //
         //
@@ -108,6 +110,17 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), ChooseActivity.class);
+                view.getContext().startActivity(intent);}
+        });
+
+        //
+        //
+        //
+
+        notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), NotesActivity.class);
                 view.getContext().startActivity(intent);}
         });
 

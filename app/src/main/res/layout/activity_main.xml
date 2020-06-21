@@ -48,7 +48,7 @@
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="393dp"
             android:src="@drawable/instrukcja"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton5"
+            app:layout_constraintBottom_toTopOf="@+id/notesB"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/settingsB"
             app:layout_constraintTop_toTopOf="parent" />
@@ -67,7 +67,7 @@
             app:layout_constraintTop_toBottomOf="@+id/digitalClock1" />
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/notesB"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginEnd="40dp"
@@ -113,7 +113,7 @@
             android:scaleType="fitCenter"
             android:src="@drawable/zapiski"
             app:layout_constraintBottom_toTopOf="@+id/textView45"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+            app:layout_constraintEnd_toStartOf="@+id/notesB"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 

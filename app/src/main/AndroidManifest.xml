@@ -24,7 +24,7 @@
             android:label="@string/manual" />
         <activity
             android:name=".NotesActivity"
-            android:label="@string/" />
+            android:label="@string/notes" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
