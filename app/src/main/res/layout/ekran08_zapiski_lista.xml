@@ -56,13 +56,13 @@
         android:inputType="date"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/spotkanie z przyjaciółmi"
+        app:layout_constraintBottom_toTopOf="@+id/spotkaniezprzyjaciolmi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView36"
         app:layout_constraintTop_toBottomOf="@+id/lekarz" />
 
     <EditText
-        android:id="@+id/spotkanie z przyjaciółmi"
+        android:id="@+id/spotkaniezprzyjaciolmi"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="43dp"
@@ -71,13 +71,13 @@
         android:inputType="date"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/dalszy spacer"
+        app:layout_constraintBottom_toTopOf="@+id/dalszyspacer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView37"
         app:layout_constraintTop_toBottomOf="@+id/fryzjer" />
 
     <EditText
-        android:id="@+id/dalszy spacer"
+        android:id="@+id/dalszyspacer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="42dp"
@@ -86,10 +86,10 @@
         android:inputType="date"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/mycie głowy"
+        app:layout_constraintBottom_toTopOf="@+id/mycieglowy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView38"
-        app:layout_constraintTop_toBottomOf="@+id/spotkanie z przyjaciółmi" />
+        app:layout_constraintTop_toBottomOf="@+id/spotkaniezprzyjaciolmi" />
 
     <TextView
         android:id="@+id/textView35"
@@ -132,8 +132,8 @@
         android:text="spotkanie z przyjaciółmi"
         android:textAlignment="textEnd"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dalszy spacer"
-        app:layout_constraintEnd_toStartOf="@+id/spotkanie z przyjaciółmi"
+        app:layout_constraintBottom_toBottomOf="@+id/dalszyspacer"
+        app:layout_constraintEnd_toStartOf="@+id/spotkaniezprzyjaciolmi"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView36" />
 
@@ -148,8 +148,8 @@
         android:text="dalszy spacer"
         android:textAlignment="textEnd"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dodaj własny"
-        app:layout_constraintEnd_toStartOf="@+id/dalszy spacer"
+        app:layout_constraintBottom_toBottomOf="@+id/dodajwlasny"
+        app:layout_constraintEnd_toStartOf="@+id/dalszyspacer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView36" />
 
@@ -165,7 +165,7 @@
         android:textAlignment="textEnd"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView40"
-        app:layout_constraintEnd_toStartOf="@+id/mycie głowy"
+        app:layout_constraintEnd_toStartOf="@+id/mycieglowy"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView38" />
 
@@ -180,24 +180,24 @@
         android:textAlignment="textEnd"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/dodaj własny"
+        app:layout_constraintEnd_toStartOf="@+id/dodajwlasny"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/mycie głowy"
+        android:id="@+id/mycieglowy"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="30dp"
         android:ems="10"
         android:inputType="date"
-        app:layout_constraintBottom_toTopOf="@+id/dodaj własny"
+        app:layout_constraintBottom_toTopOf="@+id/dodajwlasny"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView39"
-        app:layout_constraintTop_toBottomOf="@+id/dalszy spacer" />
+        app:layout_constraintTop_toBottomOf="@+id/dalszyspacer" />
 
     <EditText
-        android:id="@+id/dodaj własny"
+        android:id="@+id/dodajwlasny"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="47dp"
@@ -207,5 +207,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView40"
-        app:layout_constraintTop_toBottomOf="@+id/mycie głowy" />
+        app:layout_constraintTop_toBottomOf="@+id/mycieglowy" />
 </androidx.constraintlayout.widget.ConstraintLayout>

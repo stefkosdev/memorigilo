@@ -11,101 +11,93 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="25dp">
+        app:layout_constraintEnd_toEndOf="@+id/textView45"
+        app:layout_constraintStart_toEndOf="@+id/textView45">
 
         <DigitalClock
             android:id="@+id/digitalClock1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="51dp"
-            android:layout_marginEnd="51dp"
-            android:layout_marginBottom="33dp"
+            android:layout_width="309dp"
+            android:layout_height="141dp"
             android:text="@string/digitalclock"
             android:textAlignment="center"
             android:textSize="96sp"
-            app:layout_constraintBottom_toTopOf="@+id/remindB"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/settingsB" />
+            tools:layout_editor_absoluteX="58dp"
+            tools:layout_editor_absoluteY="189dp" />
 
         <ImageButton
             android:id="@+id/settingsB"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="58dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginEnd="162dp"
-            android:layout_marginBottom="41dp"
+            android:layout_width="74dp"
+            android:layout_height="88dp"
+            android:contentDescription="TODO"
             android:scaleType="fitCenter"
             android:src="@drawable/ustawienia"
-            app:layout_constraintBottom_toTopOf="@+id/digitalClock1"
-            app:layout_constraintEnd_toStartOf="@+id/manualB"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ustawienia"
-            android:contentDescription="TODO" />
+            tools:layout_editor_absoluteX="58dp"
+            tools:layout_editor_absoluteY="70dp"
+            tools:src="@drawable/ustawienia" />
 
         <ImageButton
-            android:id="@+id/manualB"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="62dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginBottom="45dp"
+            android:id="@+id/imageButton3"
+            android:layout_width="71dp"
+            android:layout_height="92dp"
             android:src="@drawable/instrukcja"
-            app:layout_constraintBottom_toTopOf="@+id/digitalClock1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/settingsB"
-            app:layout_constraintTop_toTopOf="parent" />
+            tools:layout_editor_absoluteX="292dp"
+            tools:layout_editor_absoluteY="62dp" />
 
         <ImageButton
             android:id="@+id/remindB"
             android:layout_width="135dp"
-            android:layout_height="0dp"
+            android:layout_height="142dp"
             android:scaleType="fitCenter"
             android:src="@drawable/alarm"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/digitalClock1" />
+            tools:layout_editor_absoluteX="139dp"
+            tools:layout_editor_absoluteY="330dp" />
 
         <ImageButton
             android:id="@+id/imageButton5"
-            android:layout_width="134dp"
-            android:layout_height="0dp"
+            android:layout_width="99dp"
+            android:layout_height="107dp"
             android:scaleType="fitCenter"
             android:src="@drawable/zapiski"
-            app:layout_constraintBottom_toTopOf="@+id/textView11"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            tools:layout_editor_absoluteX="272dp"
+            tools:layout_editor_absoluteY="547dp" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="2dp"
-            android:layout_marginBottom="22dp"
             android:text="@string/ustaw_alarm"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton5"
-            app:layout_constraintEnd_toEndOf="@+id/remindB"
-            app:layout_constraintTop_toBottomOf="@+id/remindB" />
+            tools:layout_editor_absoluteX="140dp"
+            tools:layout_editor_absoluteY="472dp" />
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginBottom="53dp"
             android:text="Zapiski"
+            android:textAlignment="center"
             android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/imageButton5"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+            tools:layout_editor_absoluteX="286dp"
+            tools:layout_editor_absoluteY="653dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="115dp"
+            android:layout_height="106dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/zapiski"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="547dp" />
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="189dp"
+            android:layout_height="39dp"
+            android:text="Lista alarmów"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="653dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
