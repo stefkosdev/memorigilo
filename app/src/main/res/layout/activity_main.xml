@@ -63,7 +63,7 @@
             android:src="@drawable/alarm"
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="@+id/digitalClock1"
-            app:layout_constraintStart_toStartOf="@+id/imageButton"
+            app:layout_constraintStart_toStartOf="@+id/alarmListB"
             app:layout_constraintTop_toBottomOf="@+id/digitalClock1" />
 
         <ImageButton
@@ -76,7 +76,7 @@
             android:src="@drawable/zapiski"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintStart_toEndOf="@+id/alarmListB"
             app:layout_constraintTop_toBottomOf="@+id/manualB" />
 
         <TextView
@@ -84,9 +84,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="43dp"
-            android:text="@string/ustaw_alarm"
+            android:text="@string/set_alarm"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton"
+            app:layout_constraintBottom_toTopOf="@+id/alarmListB"
             app:layout_constraintEnd_toEndOf="@+id/remindB"
             app:layout_constraintTop_toBottomOf="@+id/remindB" />
 
@@ -105,7 +105,7 @@
             app:layout_constraintTop_toBottomOf="@+id/digitalClock1" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/alarmListB"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="46dp"
@@ -130,6 +130,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView11"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+            app:layout_constraintTop_toBottomOf="@+id/alarmListB" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

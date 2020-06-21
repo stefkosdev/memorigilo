@@ -61,18 +61,19 @@
     <string name="delete">Kasuj</string>
     <string name="eventList">Lista zdarzeń</string>
     <string name="digitalclock">Zegar cyfrowy</string>
-    <string name="ustawienia">Ustawienia</string>
-    <string name="pory_posilkow">Pory posiłków</string>
-    <string name="kolorystyka">Kolorystyka</string>
-    <string name="ciemny">Ciemny</string>
-    <string name="jasny">Jasny</string>
-    <string name="ustaw_d_wi_k">Ustaw dźwięk</string>
-    <string name="lista_alarm_w">Lista alarmów</string>
-    <string name="ustaw_alarm">Ustaw alarm</string>
+    <string name="settings">Ustawienia</string>
+    <string name="meals_time">Pory posiłków</string>
+    <string name="theme">Kolorystyka</string>
+    <string name="dark">Ciemny</string>
+    <string name="white">Jasny</string>
+    <string name="setup_sound">Ustaw dźwięk</string>
+    <string name="alarm_list">Lista alarmów</string>
+    <string name="set_alarm">Ustaw alarm</string>
     <string name="listtodo">Lista do zrobienia</string>
-    <string name="do_zegara">Do zegara</string>
+    <string name="to_time">Do zegara</string>
     <string name="todo">do zrobienia</string>
-    <string name="instrukcja">Instrukcja</string>
-    <string name="do_posilku">Do posiłku</string>
-    <string name="jezyk">Język</string>
+    <string name="to_meal">Do posiłku</string>
+    <string name="language">Język</string>
+
+    <string name="notes">Zapiski</string>
 </resources>
