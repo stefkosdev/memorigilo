@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/bgColor"
     tools:context=".EventListActivity">
 
     <ListView
         android:id="@+id/listOfEvents"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:textSize="26sp" />
+        android:textSize="26sp"
+        android:textColor="?attr/textColor"/>
 </LinearLayout>

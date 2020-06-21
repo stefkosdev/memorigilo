@@ -46,6 +46,7 @@ public class MainActivity extends Activity {
     public static int mealTimeChoose = 0;
 
     public static CalendarManager calendarManager = null;
+    public static String Theme = "Light";
     final int callbackId = 42;
 
     @Override
@@ -63,6 +64,13 @@ public class MainActivity extends Activity {
         MainActivity.foodTimes[4] = new FoodTimeEntry();
 
         MainActivity.loadSettings( this.getApplication() );
+        if( Theme.equals("Dark") ) {
+            setTheme(R.style.DarkTheme);
+        }
+        else
+        {
+            setTheme(R.style.LightTheme);
+        }
 
         // set food times
         MainActivity.foodTimes[0].setName( getResources().getString(R.string.breakfast) );
@@ -178,6 +186,13 @@ public class MainActivity extends Activity {
         SharedPreferences settings;
         settings = ctx.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE);
 
+        // get theme
+        String theme = settings.getString("THEME", null);
+        if( theme != null )
+        {
+            MainActivity.Theme = theme;
+        }
+
         //get the sharepref
         String prf = settings.getString("MEAL_TIMES", null);
 
@@ -236,6 +251,23 @@ public class MainActivity extends Activity {
         }
         editor.putString("MEAL_TIMES_SINGLE", save );
         Log.d(MainActivity.class.toString(), "single meal times save: " + save );
+
+        editor.commit();
+    }
+
+    //
+    //
+    //
+
+    public static void saveSettingsTheme( Context ctx )
+    {
+        SharedPreferences settings;
+        settings = ctx.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = settings.edit();
+
+        editor.putString("THEME", "" + MainActivity.Theme );
+        Log.d(MainActivity.class.toString(), "theme: " + MainActivity.Theme );
 
         editor.commit();
     }

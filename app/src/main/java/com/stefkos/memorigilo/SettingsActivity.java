@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 
 import androidx.preference.PreferenceFragmentCompat;
 
@@ -14,6 +15,8 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
 
     Button setMealTimesB = null;
     Button manualB = null;
+    RadioButton lightThemeRB = null;
+    RadioButton darkThemeRB = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,9 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
 
         setMealTimesB = findViewById(R.id.setMealsB );
 
+        lightThemeRB = findViewById(R.id.LightRB);
+        darkThemeRB = findViewById(R.id.DarkRB);
+
         setMealTimesB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,6 +35,28 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
                 Intent intent = new Intent(view.getContext(), ChooseMealTimeActivity.class);
                 view.getContext().startActivity(intent);}
         });
+
+        lightThemeRB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                darkThemeRB.setSelected(false);
+                MainActivity.Theme = "Light";
+                setTheme(R.style.LightTheme);
+                MainActivity.saveSettingsTheme(view.getContext());
+            }
+        });
+
+        darkThemeRB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lightThemeRB.setSelected(false);
+                MainActivity.Theme = "Dark";
+                setTheme(R.style.DarkTheme);
+                MainActivity.saveSettingsTheme(view.getContext());
+            }
+        });
+
+
         /*
         getSupportFragmentManager()
                 .beginTransaction()

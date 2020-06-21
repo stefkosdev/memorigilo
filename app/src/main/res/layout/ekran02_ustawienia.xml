@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/bgColor"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,6 +14,7 @@
         android:text="@string/alarm_list"
         android:textAlignment="center"
         android:textSize="24sp"
+        android:textColor="?attr/textColor"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +28,7 @@
         android:text="@string/meals_time"
         android:textAlignment="center"
         android:textSize="24sp"
+        android:textColor="?attr/textColor"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +42,7 @@
         android:text="@string/setup_sound"
         android:textAlignment="center"
         android:textSize="24sp"
+        android:textColor="?attr/textColor"
         app:layout_constraintBottom_toTopOf="@+id/setMealsB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,6 +57,7 @@
         android:text="@string/settings"
         android:textAlignment="center"
         android:textSize="36sp"
+        android:textColor="?attr/textColor"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,36 +71,39 @@
         android:text="@string/theme"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton2"
+        android:textColor="?attr/textColor"
+        app:layout_constraintBottom_toTopOf="@+id/DarkRB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/DarkRB"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="67dp"
         android:layout_marginBottom="124dp"
         android:text="@string/dark"
         android:textSize="24sp"
+        android:textColor="?attr/textColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/radioButton"
+        app:layout_constraintStart_toEndOf="@+id/LightRB"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/LightRB"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="78dp"
         android:layout_marginEnd="30dp"
         android:text="@string/white"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/radioButton2"
-        app:layout_constraintEnd_toStartOf="@+id/radioButton2"
+        android:textColor="?attr/textColor"
+        app:layout_constraintBottom_toBottomOf="@+id/DarkRB"
+        app:layout_constraintEnd_toStartOf="@+id/DarkRB"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/radioButton2" />
+        app:layout_constraintTop_toTopOf="@+id/DarkRB" />
 
     <Button
         android:id="@+id/button"
@@ -104,6 +112,7 @@
         android:layout_marginBottom="33dp"
         android:text="@string/language"
         android:textSize="24sp"
+        android:textColor="?attr/textColor"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
