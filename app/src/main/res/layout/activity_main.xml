@@ -42,14 +42,14 @@
             android:scaleType="fitCenter"
             android:src="@drawable/ustawienia"
             app:layout_constraintBottom_toTopOf="@+id/digitalClock1"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+            app:layout_constraintEnd_toStartOf="@+id/manualB"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/ustawienia"
             android:contentDescription="TODO" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/manualB"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="62dp"

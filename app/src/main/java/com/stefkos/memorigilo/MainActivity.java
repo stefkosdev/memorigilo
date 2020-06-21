@@ -86,6 +86,7 @@ public class MainActivity extends Activity {
         //okButton = findViewById(R.id.okB );
         settings = findViewById(R.id.settingsB);
         remind = findViewById(R.id.remindB);
+        manual = findViewById(R.id.manualB);
         //eventList = findViewById(R.id.remindListB);
 
         //
@@ -114,12 +115,24 @@ public class MainActivity extends Activity {
         //
         //
 
+        manual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ManualActivity.class);
+                view.getContext().startActivity(intent);}
+        });
+
+        //
+        //
+        //
+/*
         eventList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), EventListActivity.class);
                 view.getContext().startActivity(intent);}
         });
+        */
     }
 
     //

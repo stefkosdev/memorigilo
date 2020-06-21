@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+<!--
     <TextView
         android:id="@+id/textView12"
         android:layout_width="238dp"
@@ -145,4 +145,5 @@
         android:inputType="date"
         tools:layout_editor_absoluteX="259dp"
         tools:layout_editor_absoluteY="628dp" />
+        -->
 </androidx.constraintlayout.widget.ConstraintLayout>

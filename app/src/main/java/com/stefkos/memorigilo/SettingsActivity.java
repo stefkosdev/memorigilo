@@ -21,7 +21,6 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
         setContentView(R.layout.ekran02_ustawienia);
 
         setMealTimesB = findViewById(R.id.setMealsB );
-        manualB =  findViewById(R.id.manualB );
 
         setMealTimesB.setOnClickListener(new View.OnClickListener() {
             @Override
