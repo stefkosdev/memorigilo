@@ -14,7 +14,7 @@ import com.stefkos.memorigilo.MainActivity;
 import com.stefkos.memorigilo.R;
 import com.stefkos.memorigilo.util.FoodTimeEntry;
 
-public class ChooseFragment4_1 extends Fragment {
+public class ChooseFragment2_1 extends Fragment {
 
     Button setTimeB = null;
     TimePicker tpicker = null;
@@ -26,8 +26,8 @@ public class ChooseFragment4_1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         // Defines the xml file for the fragment
-        v = inflater.inflate(R.layout.choose_fragment4_1, parent, false);
-
+        v = inflater.inflate(R.layout.ekran05_ustawalarm_dozegara, parent, false);
+/*
         setTimeB = v.findViewById(R.id.setTimeB);
         tpicker = v.findViewById(R.id.alarmTimePicker);
 
@@ -45,50 +45,40 @@ public class ChooseFragment4_1 extends Fragment {
 
                 if( dtype == "medicine")
                 {
-                    /*
-                    imageIDS[0] = R.drawable.tabletka_pol;
-                    imageIDS[1] = R.drawable.tabletka_cala;
-                    imageIDS[2] = R.drawable.tabletka_antybiotyk;
-                     */
-                    if( ChooseFragment2.imageIDS[ selectedIcon] == R.drawable.tabletka_pol )
+
+                    if( ChooseFragment42.imageIDS[ selectedIcon] == R.drawable.tabletka_pol )
                     {
                         title = "Wez pol tabletki";
                     }
-                    else if( ChooseFragment2.imageIDS[ selectedIcon] == R.drawable.tabletka_cala )
+                    else if( ChooseFragment42.imageIDS[ selectedIcon] == R.drawable.tabletka_cala )
                     {
                         title = "Wez cala tabletke";
                     }
-                    else if( ChooseFragment2.imageIDS[ selectedIcon] == R.drawable.tabletka_antybiotyk )
+                    else if( ChooseFragment42.imageIDS[ selectedIcon] == R.drawable.tabletka_antybiotyk )
                     {
                         title = "Wez antybiotyk";
                     }
                 }
                 else
                 {
-                    /*
-                    imageIDS[0] = R.drawable.alarm;
-                    imageIDS[1] = R.drawable.posilek;
-                    imageIDS[2] = R.drawable.spotkanie;
-                    imageIDS[3] = R.drawable.telewizja;
-                    imageIDS[4] = R.drawable.zegar;
-                     */
-                    if( ChooseFragment2.imageIDS[ selectedIcon] == R.drawable.alarm )
+
+                    if( ChooseFragment42.imageIDS[ selectedIcon] == R.drawable.alarm )
                     {
                         title = "Alarm";
                     }
-                    else if( ChooseFragment2.imageIDS[ selectedIcon] == R.drawable.posilek )
+                    else if( ChooseFragment42.imageIDS[ selectedIcon] == R.drawable.posilek )
                     {
                         title = "Posilek";
                     }
-                    else if( ChooseFragment2.imageIDS[ selectedIcon] == R.drawable.spotkanie )
+                    else if( ChooseFragment42.imageIDS[ selectedIcon] == R.drawable.spotkanie )
                     {
                         title = "spotkanie";
                     }
-                    else if( ChooseFragment2.imageIDS[ selectedIcon] == R.drawable.telewizja )
+                    else if( ChooseFragment42.imageIDS[ selectedIcon] == R.drawable.telewizja )
                     {
                         title = "telewizja";
                     }
-                    else if( ChooseFragment2.imageIDS[ selectedIcon] == R.drawable.zegar )
+                    else if( ChooseFragment42.imageIDS[ selectedIcon] == R.drawable.zegar )
                     {
                         title = "zegar";
                     }
@@ -124,7 +114,7 @@ public class ChooseFragment4_1 extends Fragment {
                 Intent intent = new Intent(view.getContext(), MainActivity.class);
                 view.getContext().startActivity(intent);}
         });
-
+*/
         return v;
     }
 

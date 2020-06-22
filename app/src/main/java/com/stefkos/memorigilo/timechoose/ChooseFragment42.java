@@ -19,7 +19,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.stefkos.memorigilo.OnSwipeTouchListener;
 import com.stefkos.memorigilo.R;
 
-public class ChooseFragment2 extends Fragment {
+public class ChooseFragment42 extends Fragment {
 
     ImageSwitcher is = null;
     View v = null;

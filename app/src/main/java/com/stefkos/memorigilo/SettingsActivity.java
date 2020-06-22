@@ -24,6 +24,7 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // we must set theme before its attached to view
         if( MainActivity.Theme.equals("Dark") ) {
             setTheme(R.style.DarkTheme);
         }
@@ -34,6 +35,7 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
 
         setContentView(R.layout.ekran02_ustawienia);
 
+        // attach buttons to objects
         setMealTimesB = findViewById(R.id.setMealsB );
 
         lightThemeRB = findViewById(R.id.LightRB);
@@ -48,6 +50,7 @@ public class SettingsActivity extends Activity{// AppCompatActivity {
             themeGroup.check(themeGroup.getChildAt(0).getId());
         }
 
+        // set button actions
         setMealTimesB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -7,68 +7,73 @@
     android:background="?attr/bgColor">
 
     <Button
-        android:id="@+id/textView27"
+        android:id="@+id/breakfastB"
         android:layout_width="236dp"
         android:layout_height="0dp"
         android:layout_marginBottom="30dp"
         android:text="śniadanie"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView29"
+        android:textColor="?attr/textColor"
+        app:layout_constraintBottom_toTopOf="@+id/secondBreakfast"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
     <Button
-        android:id="@+id/textView29"
+        android:id="@+id/secondBreakfast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="31dp"
         android:text="drugie śniadanie"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView28"
-        app:layout_constraintEnd_toEndOf="@+id/textView27"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+        android:textColor="?attr/textColor"
+        app:layout_constraintBottom_toTopOf="@+id/lunchB"
+        app:layout_constraintEnd_toEndOf="@+id/breakfastB"
+        app:layout_constraintTop_toBottomOf="@+id/breakfastB" />
 
     <Button
-        android:id="@+id/textView30"
+        android:id="@+id/preSupperrB"
         android:layout_width="235dp"
         android:layout_height="0dp"
         android:layout_marginBottom="31dp"
         android:text="podwieczorek"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView31"
+        android:textColor="?attr/textColor"
+        app:layout_constraintBottom_toTopOf="@+id/supperB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+        app:layout_constraintTop_toBottomOf="@+id/lunchB" />
 
     <Button
-        android:id="@+id/textView31"
+        android:id="@+id/supperB"
         android:layout_width="232dp"
         android:layout_height="0dp"
         android:layout_marginBottom="160dp"
         android:text="kolacja"
         android:textAlignment="center"
         android:textSize="24sp"
+        android:textColor="?attr/textColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+        app:layout_constraintTop_toBottomOf="@+id/preSupperrB" />
 
     <Button
-        android:id="@+id/textView28"
+        android:id="@+id/lunchB"
         android:layout_width="236dp"
         android:layout_height="0dp"
         android:layout_marginBottom="30dp"
         android:text="obiad"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView30"
+        android:textColor="?attr/textColor"
+        app:layout_constraintBottom_toTopOf="@+id/preSupperrB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        app:layout_constraintTop_toBottomOf="@+id/secondBreakfast" />
 
     <TextView
         android:id="@+id/textView25"
@@ -80,6 +85,7 @@
         android:text="Pory posiłków"
         android:textAlignment="center"
         android:textSize="36sp"
+        android:textColor="?attr/textColor"
         app:layout_constraintBottom_toTopOf="@+id/textView26"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +101,8 @@
         android:text="Ustaw zakres czasowy"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView27"
+        android:textColor="?attr/textColor"
+        app:layout_constraintBottom_toTopOf="@+id/breakfastB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />

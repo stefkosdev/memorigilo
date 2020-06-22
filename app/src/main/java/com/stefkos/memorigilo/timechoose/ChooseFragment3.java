@@ -31,7 +31,7 @@ public class ChooseFragment3 extends Fragment {
 
                 ChooseActivity.setTimeType("byTime");
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ChooseFragment4_1 cf = new ChooseFragment4_1();
+                ChooseFragment2_1 cf = new ChooseFragment2_1();
                 ft.replace(R.id.mainFragment, cf );
                 ft.addToBackStack(null);
                 ft.commit();
@@ -43,7 +43,7 @@ public class ChooseFragment3 extends Fragment {
 
                 ChooseActivity.setTimeType("byFood");
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ChooseFragment4_2 cf = new ChooseFragment4_2();
+                ChooseFragment2_2 cf = new ChooseFragment2_2();
                 ft.replace(R.id.mainFragment, cf );
                 ft.addToBackStack(null);
                 ft.commit();
