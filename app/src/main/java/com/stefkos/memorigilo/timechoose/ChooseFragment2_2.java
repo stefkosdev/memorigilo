@@ -152,6 +152,6 @@ public class ChooseFragment2_2 extends Fragment {
         MainActivity.saveSettings(v.getContext() );
 
         Intent intent = new Intent(view.getContext(), MainActivity.class);
-        view.getContext().startActivity(intent);}
+        view.getContext().startActivity(intent);
     }
 }
