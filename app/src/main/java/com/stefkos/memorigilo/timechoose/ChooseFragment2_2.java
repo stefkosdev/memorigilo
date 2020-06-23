@@ -145,11 +145,11 @@ public class ChooseFragment2_2 extends Fragment {
         }
         catch( SecurityException se )
         {
-            Log.e(this.getClass().toString(), "Security Exception: " + se.toString() );
+            Log.e(view.getClass().toString(), "Security Exception: " + se.toString() );
         }
         long ret = MainActivity.calendarManager.createEvent( title, "WEZ!", fromHour, fromMins, toHour, toMins );
         MainActivity.foodTimes[position].setEventID( ret );
-        MainActivity.saveSettings(v.getContext() );
+        MainActivity.saveSettings(view.getContext() );
 
         Intent intent = new Intent(view.getContext(), MainActivity.class);
         view.getContext().startActivity(intent);
