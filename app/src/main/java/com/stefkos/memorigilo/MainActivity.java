@@ -36,6 +36,7 @@ public class MainActivity extends Activity {
     ImageButton manual = null;
     ImageButton notes = null;
     ImageButton eventList = null;
+    public static String RingToneUri = null;
 
     private static final String PREFERENCES = "App_Preferences";
 
