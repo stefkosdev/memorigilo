@@ -166,7 +166,8 @@ public class CalendarManager {
             reminderValues.put(Reminders.EVENT_ID, eventId );
             reminderValues.put(Reminders.MINUTES, 15 );
             reminderValues.put(Reminders.METHOD, Reminders.METHOD_ALERT);
-            reminderValues.put(Reminders.)
+            //Reminders.
+            //reminderValues.put(Reminders.)
 
             String reminderUriString = "content://com.android.calendar/reminders";
             Uri reminderUri = lc.getContentResolver().insert(Uri.parse(reminderUriString), reminderValues);

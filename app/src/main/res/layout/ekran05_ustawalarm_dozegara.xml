@@ -10,22 +10,26 @@
     <TextView
         android:id="@+id/textView14"
         android:layout_width="307dp"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="44dp"
         android:text="Ustaw alarm"
         android:textAlignment="center"
         android:textSize="36sp"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="44dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="156dp"
-        android:layout_height="42dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="2dp"
         android:text="@string/to_time"
         android:textAlignment="center"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="94dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <TimePicker
         android:id="@+id/alarmTimePicker"
@@ -34,51 +38,63 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="25dp"
         android:timePickerMode="spinner"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="151dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="166dp"
         android:layout_height="47dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="1dp"
         android:text="Wybór czasu"
         android:textAlignment="center"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="311dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarmTimePicker" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_launcher_background"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="413dp" />
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="53dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        android:src="@drawable/ic_launcher_background" />
 
     <SeekBar
         android:id="@+id/seekBar2"
         android:layout_width="226dp"
         android:layout_height="28dp"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="532dp" />
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="171dp"
         android:layout_height="39dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="11dp"
         android:text="Wybór ikony"
         android:textAlignment="center"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="571dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="30dp"
         android:text="Zatwierdź"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="640dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
